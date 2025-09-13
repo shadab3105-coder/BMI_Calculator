@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+
+</head>
+<link rel="stylesheet" href="Registration_form.CSS"> <!--bridge to css-->
+
+<body>
+  <h1>This is Simple Registration Form</h1>
+  <form action="url" method="get">
+    <nav><label for="">First Name: </label>
+      <input type="" placeholder="firstname" name="" id="">
+      <label for="">Middle Name: </label>
+      <input type="" placeholder="middlename" name="" id="">
+      <label for="">Lastname: </label>
+
+      <input type="" placeholder="lastname" name="" id="">
+    </nav><br>
+
+    <!--LOGIN PART-->
+    <label for="">Email Address:</label>
+    <input type="email" name="email" placeholder="you@example.com" required>
+
+    <label for="">Password:</label>
+    <input type="password" name="password" placeholder="Enter password" required>
+
+    <label for="">Confirm Password:</label>
+    <input type="password" name="confirm_password" placeholder="Re-enter password" required>
+
+    <!--for image uploading-->
+    <label for="imageUpload">Upload Your Latest Photo:</label>
+    <input type="file" id="imageUpload" name="imageUpload" accept="image/*">
+
+
+    <label for="">F_Name: </label>
+    <input type="" placeholder="fathername" name="" id="">
+    <label for="">Mother Name: </label>
+    <input type="" placeholder="M_name" name="" id=""><br>
+
+    <!--Siblings part-->
+    <label for="">Siblings?</label>
+    <select name="Category" id=""> <!--most imp tag-->
+      <option value="general">Yes</option>
+      <option value="general">No</option>
+    </select>
+    <label for="">Brother</label>
+    <input type="number" name="Brother" min="0" max="10" style="width: 50px;" id=""><!--min 0 imp part-->
+    <label for="">Sister</label>
+    <input type="number" name="Sister" min="0" max="10" style="width: 50px;" id=""><!--min 0 imp part-->
+    <!--Blood Group-->
+    <br>
+    <label for="">Blood Group</label>
+    <select name="Category" id=""> <!--most imp tag-->
+      <option value="general">O+</option>
+      <option value="general">B+</option>
+      <option value="general">B-</option>
+      <option value="general">OB-</option>
+      <option value="general">OB+</option>
+      <option value="general">Forget</option>
+    </select>
+    <hr style="width: 70%;">
+    <!--Gender-->
+    <label>Gender:</label>
+
+    <input type="radio" id="male" name="gender" value="Male">
+    <label for="male">Male</label>
+
+    <input type="radio" id="female" name="gender" value="Female">
+    <label for="female">Female</label>
+
+    <input type="radio" id="shemale" name="gender" value="Shemale">
+    <label for="shemale">Shemale</label>
+
+    <input type="radio" id="trans" name="gender" value="Transgender">
+    <label for="trans">Transgender</label>
+    <hr style="width: 70%;">
+    <h2>Address Part</h2>
+    <label for="Adress">Your Current Address: </label><br>
+
+    <label for="">Street: </label>
+    <input type="tel" name="" id="">
+    <label for="">City: </label>
+    <input type="tel" name="" id="">
+    <label for="">Zipcode: </label>
+    <input type="number" name="" min="0" max="1000000" id="numbers">
+    <label for="">State: </label>
+    <input type="tel" name="" pattern="[A-Za-z\s]+" title="Only letters allowed" required id="">
+    <label for="">Country: </label>
+    <input type="tel" name="" id=""><br>
+
+    <!--Education Information-->
+    <h2>Education Background</h2>
+    <label for="">Last Qualification</label>
+
+    <select name="" id="">
+      <option value="">H.S.</option>
+      <option value="">UG</option>
+      <option value="">PG</option>
+    </select>
+    <label for="">Percentage</label>
+    <input type="number" name="percent" min="0" max="100" style="width: 50px;" id=""><br>
+    <label for="imageUpload">Upload Your Last Qualification Certificate/Marksheet:</label>
+    <input type="file" id="imageUpload" name="imageUpload" accept="image/*">
+
+    <!--Work details-->
+    <h2>Work Experience</h2>
+    <label for="imageUpload">Upload Your Experience Certificate:</label>
+    <input type="file" id="imageUpload" name="imageUpload" accept="image/*">
+    <br><br>
+    <button class="submit"
+      style="padding: 10px 25px; font-size: 16px; background-color: #007bff; color: white; border: none; border-radius: 6px; cursor: pointer;">
+      Submit Form
+    </button>
+
+
+  </form>
+</body>
+
+</html>
