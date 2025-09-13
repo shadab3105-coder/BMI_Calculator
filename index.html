@@ -10,20 +10,16 @@
 
 <body class="flex justify-center items-center min-h-screen bg-gray-500">
   <div>
-
-    <form class="form"> <!--form ke andar hi input element h to querySelector sirf all nh-->
-      <label for="height">Height in cm: </label> <!--NOTE:- cursor label mei click karne par focus hoga box mei-->
+    <form class="form">
+      <label for="height">Height in cm: </label>
       <input id="height" class="border-black border-2" placeholder="Enter Height in cm">
       <br><br>
       <label for="weight">Weight in KG: </label>
       <input id="weight" class="border-black border-2" placeholder="Enter KG in number">
       <br><br>
-      <button type="submit"
-        class="border-2 border-black rounded-md text-2xl ml-[100px] text-black bg-amber-300">Calculate</button>
+      <button type="submit" class="border-2 border-black rounded-md text-2xl ml-[100px] text-black bg-amber-300">Calculate</button>
 
       <div id="results" class="mt-4 ml-[100px] font-bold text-white"></div>
-      <!--ye white text ke lye h jo calculate par show hoga bus-->
-      <!--<div id="results"></div>ye bus id tag krne ke lye use hua or kch nh-->
       <br><br><br>
       <div class="ml-[100px] font-bold">
         <h3>BMI Weight Guide</h3><br>
@@ -36,6 +32,6 @@
   </div>
 
 
+  <script src="script.js"></script>
 </body>
-
 </html>
