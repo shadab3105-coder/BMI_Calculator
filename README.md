@@ -40,3 +40,7 @@ HTML5
 CSS3 (Tailwind CSS)
 
 JavaScript (DOM Manipulation)
+
+
+📸 Live Preview
+🌐 https://shadab3105-coder.github.io/BMI_Calculator/
