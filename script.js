@@ -1,41 +1,38 @@
-  <script>
-    // step1...form ko target kya "selectorAll" nh lgaya q ki yaha ek hi form h
-    const form = document.querySelector('.form')
+// Step 1: Select the form. We don't use querySelectorAll because there is only one form
+const form = document.querySelector('.form')
 
-    //step2...imp things is that adding eventListener q ki event hi to hoga or "form ke andar hoga"
-    form.addEventListener('submit', function (e) {  //submit hota h input lene ke lye ye rule h
-      e.preventDefault()  //step3.....page reload hone se rokna
+// Step 2: Add an event listener for the submit event inside the form
+form.addEventListener('submit', function (e) {  
+  e.preventDefault()  // Step 3: Prevent page reload on form submission
 
-      const height = parseInt(document.querySelector('#height').value)  //parseInt convert string to num means "42" to 42 q ki html hamesa input(string/number/any) ko string ke trah create krta h
-      const weight = parseInt(document.querySelector('#weight').value)
-      const results = document.querySelector('#results')
+  // Get the height and weight values from inputs and convert them to numbers
+  const height = parseInt(document.querySelector('#height').value)  
+  const weight = parseInt(document.querySelector('#weight').value)
+  const results = document.querySelector('#results')
 
+  // Validate height input
+  if (height === '' || height < 0 || isNaN(height)) {  
+    results.innerHTML = `Please give a valid height ${height}`  // Display error message in the results div
+  } 
+  // Validate weight input
+  else if (weight === '' || weight < 0 || isNaN(weight)) {  
+    results.innerHTML = `Please give a valid weight ${weight}`  // Display error message in the results div
+  }
+  else {
+    // Calculate BMI using the formula
+    const BMI = (weight / ((height * height) / 10000)).toFixed(2)  
+    results.innerHTML = `${BMI}`   // Show the raw BMI value (this will be replaced below with category)
 
-      if (height === '' || height < 0 || isNaN(height)) {  //isNan(height) means height number mei convertable h to true hoga
-        results.innerHTML = `Please give a valid height ${height}`  //Yani tu variable results ke through HTML ke div#results ke andar ka content change kar raha hai. yani ab <div id="result"></div> ab ban gaya h <div id="result">please give a valid height</div>
-      } else if (weight === '' || weight < 0 || isNaN(weight)) {  //isNan(height) means height number mei convertable h to true hoga
-        results.innerHTML = `Please give a valid weight ${weight}`  //ye sout mei n dete the to n changeable hota tha waisa hi h
-      }
-      else {
-        const BMI = (weight / ((height * height) / 10000)).toFixed(2)  //formula, its math part
-        //show the result
-        results.innerHTML = `${BMI}`   //ye changeable h value ke according like System.out.println("sas"+n+"sas")
+    // Check BMI category and display message
+    if (BMI < 18.5) {
+      results.innerHTML = `Your BMI is <b>${BMI}</b> → Underweight (take care)`
+    } else if (BMI >= 18.5 && BMI <= 24.9) {
+      results.innerHTML = `Your BMI is <b>${BMI}</b> → Normal range (perfect)`
+    } else if (BMI >= 25 && BMI <= 29.9) {
+      results.innerHTML = `Your BMI is <b>${BMI}</b> → Overweight (warning)`
+    } else {
+      results.innerHTML = `Your BMI is <b>${BMI}</b> → Obese (danger)`
+    }
+  }
 
-
-        // Condition check
-        if (BMI < 18.5) {
-          results.innerHTML = `Your BMI is <b>${BMI}</b> → Underweight(care urself)`;
-        } else if (BMI >= 18.5 && BMI <= 24.9) {
-          results.innerHTML = `Your BMI is <b>${BMI}</b> → Normal range(perfect)`;
-        } else if (BMI >= 25 && BMI <= 29.9) {
-          results.innerHTML = `Your BMI is <b>${BMI}</b> → Overweight(warning)`;
-        } else {
-          results.innerHTML = `Your BMI is <b>${BMI}</b> → Obese(danger)`;
-        }
-      }
-
-    })
-
-
-
-  </script>
+})
